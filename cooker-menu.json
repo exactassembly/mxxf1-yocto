@@ -1,0 +1,48 @@
+{
+    "notes" : [
+            "Please refer to the README file for instruction on how to build the image"
+    ],
+    "sources" : [
+        { "url": "https://git.yoctoproject.org/poky", 
+                "branch": "scarthgap",
+                "rev":"ce9f4eaaae324ef4182a39293f3a6b2aa7207680",
+                "dir": "poky" },
+        { "url": "https://github.com/openembedded/meta-openembedded.git", 
+				"branch": "scarthgap",
+                "rev":"4f11a12b2352bbdfafb6b7d956bf424af4992977",
+                "dir": "meta-openembedded" },
+        { "url":"https://github.com/Freescale/meta-freescale",
+                "branch": "scarthgap",
+                "rev":"24209b28709e15226e10955a1fd2472dcb11117f" },
+        { "url":"https://github.com/Freescale/meta-freescale-distro",
+                "branch": "scarthgap",
+                "rev":"b9d6a5d9931922558046d230c1f5f4ef6ee72345" },
+        { "method":"ignore",
+            "url":"https://github.com/x/x",
+            "dir":"/workspaces/mpcf1-build-local/meta-thrustmastertx"}
+    ],
+    "layers" : [
+            "poky/meta",
+            "poky/meta-poky",
+            "meta-openembedded/meta-oe",
+            "meta-openembedded/meta-gnome",
+            "meta-openembedded/meta-python",
+            "meta-openembedded/meta-networking",
+            "meta-openembedded/meta-multimedia",
+            "Freescale/meta-freescale",
+            "Freescale/meta-freescale-distro",
+            "meta-thrustmastertx"
+    ],
+
+    "builds" : {
+        "imx6": {
+            "target" : "core-image-minimal",
+            "local.conf": [
+                "DISTRO                     = 'fsl-xwayland'     ",
+		"MACHINE                    = 'imx6qdlsabresd'      ",
+                "WKS_FILE                   = 'dr-bootpart.wks.in'",
+	        ]
+        }
+    }
+}
+

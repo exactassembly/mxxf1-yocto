@@ -1,0 +1,42 @@
+{
+    "name": "Yocto|Cooker",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "features": {
+        "ghcr.io/exactassembly/yocto-devcontainer-features/yocto-cooker:1" : {
+                "version": "1.3.1"
+            }
+    },
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}-local",
+    "containerEnv": {
+        "COOKER_MENU_DIR" : "${containerWorkspaceFolder}",
+        "COOKER_USE_DL_CACHE" : "true",
+        "COOKER_USE_SSTATE_CACHE" : "true",
+        "CONTAINER_WORKSPACE_FOLDER" : "${containerWorkspaceFolder}"
+    },
+
+    "initializeCommand": "echo WKS_FOLDER_BNAME=${localWorkspaceFolderBasename}-local > .devcontainer/.env",
+    "postCreateCommand": {
+        "dl-cache": "sudo chmod -R 777 /var/lib/dl-cache",
+        "sstate-cache": "sudo chmod -R 777 /var/lib/sstate-cache",
+        "git": "sudo runuser -l vscode -c 'git config --global --add safe.directory '*' && cd ${containerWorkspaceFolder} && if [ -n \"$(git submodule)\" ]; then git submodule update --init ; fi' ",
+        "symlink": "test ! -d /home/vscode/yocto-layers && (mkdir /home/vscode/yocto-layers) ; for f in ${containerWorkspaceFolder}/meta-*; do sudo ln -s $f /home/vscode/yocto-layers/ ; done"
+
+    },
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode",
+                "EditorConfig.EditorConfig",
+                "EugenWeins.bitbake",
+				"yzhang.markdown-all-in-one",
+				"streetsidesoftware.code-spell-checker",
+				"DavidAnson.vscode-markdownlint",
+				"shd101wyy.markdown-preview-enhanced",
+				"bierner.github-markdown-preview"
+            ]
+        }
+    }
+}
