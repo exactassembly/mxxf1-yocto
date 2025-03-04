@@ -31,16 +31,18 @@
             "meta-openembedded/meta-multimedia",
             "Freescale/meta-freescale",
             "Freescale/meta-freescale-distro",
+            "meta-mxxf1",
             "meta-thrustmastertx"
     ],
 
     "builds" : {
-        "imx6": {
+        "mxxf1": {
             "target" : "core-image-minimal",
             "local.conf": [
-                "DISTRO                     = 'fsl-xwayland'     ",
-		"MACHINE                    = 'imx6qdlsabresd'      ",
-                "WKS_FILE                   = 'dr-bootpart.wks.in'",
+                "DISTRO                     = 'dr-distro'     ",
+                "ACCEPT_FSL_EULA = '2'",
+                "IMAGE_FEATURES            += ' empty-root-password'",
+		"MACHINE                    = 'dr-imx6-mc'      "
 	        ]
         }
     }

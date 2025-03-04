@@ -1,0 +1,6 @@
+# short-description: Create SD card image without boot partition or bootloader
+# long-description:
+
+part / --source rootfs --ondisk mmcblk --fstype=ext4 --label root --align 8192
+
+bootloader --ptable msdos
