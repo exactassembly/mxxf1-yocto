@@ -42,6 +42,7 @@
                 "DISTRO                     = 'dr-distro'     ",
                 "ACCEPT_FSL_EULA = '2'",
                 "IMAGE_FEATURES            += ' empty-root-password'",
+                "DISTRO_FEATURES           += ' x11'      ",
 		"MACHINE                    = 'dr-imx6-mc'      "
 	        ]
         }
