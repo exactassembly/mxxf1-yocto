@@ -17,6 +17,10 @@
         { "url":"https://github.com/Freescale/meta-freescale-distro",
                 "branch": "scarthgap",
                 "rev":"b9d6a5d9931922558046d230c1f5f4ef6ee72345" },
+        { "url":"https://github.com/meta-qt5/meta-qt5.git",
+                "dir":"meta-qt5",
+                "branch": "scarthgap",
+                "rev":"eb828418264a49b8d00035cb3d7b12fcea3be801" },
         { "method":"ignore",
             "url":"https://github.com/x/x",
             "dir":"/workspaces/mpcf1-build-local/meta-thrustmastertx"}
@@ -31,6 +35,7 @@
             "meta-openembedded/meta-multimedia",
             "Freescale/meta-freescale",
             "Freescale/meta-freescale-distro",
+            "meta-qt5",
             "meta-mxxf1",
             "meta-thrustmastertx"
     ],
