@@ -42,7 +42,7 @@
 
     "builds" : {
         "mxxf1": {
-            "target" : "core-image-minimal",
+            "target" : "tmtx-image",
             "local.conf": [
                 "DISTRO                     = 'dr-distro'     ",
                 "ACCEPT_FSL_EULA = '2'",
