@@ -5,7 +5,7 @@
     "sources" : [
         { "url": "https://git.yoctoproject.org/poky", 
                 "branch": "scarthgap",
-                "rev":"ce9f4eaaae324ef4182a39293f3a6b2aa7207680",
+                "rev":"bab0f9f62af9af580744948dd3240f648a99879a",
                 "dir": "poky" },
         { "url": "https://github.com/openembedded/meta-openembedded.git", 
 				"branch": "scarthgap",
@@ -13,7 +13,7 @@
                 "dir": "meta-openembedded" },
         { "url":"https://github.com/Freescale/meta-freescale",
                 "branch": "scarthgap",
-                "rev":"24209b28709e15226e10955a1fd2472dcb11117f" },
+                "rev":"fe533cd4b95b6d3c88b6f553684a06c07c48a7bf" },
         { "url":"https://github.com/Freescale/meta-freescale-distro",
                 "branch": "scarthgap",
                 "rev":"b9d6a5d9931922558046d230c1f5f4ef6ee72345" },
@@ -47,7 +47,7 @@
                 "DISTRO                     = 'dr-distro'     ",
                 "ACCEPT_FSL_EULA = '2'",
                 "IMAGE_FEATURES            += ' empty-root-password'",
-                "DISTRO_FEATURES           += ' x11'      ",
+                "DISTRO_FEATURES           += ' weston'      ",
 		"MACHINE                    = 'dr-imx6-mc'      "
 	        ]
         }
