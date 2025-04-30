@@ -1,11 +1,9 @@
 SUMMARY = "ThrustmasterTX image."
-DESCRIPTION = "Image with Sato, a mobile environment and visual style for \
-mobile devices. The image supports X11 with a Sato theme, Pimlico \
-applications, and contains terminal, editor, and file manager."
+DESCRIPTION = "PanelPC appliance running ThrustmasterTX control GUI"
 
+IMAGE_FEATURES += "package-management ssh-server-dropbear hwcodecs weston"
 
-IMAGE_FEATURES += "splash package-management x11-base x11-sato ssh-server-dropbear hwcodecs"
-
+IMAGE_INSTALL += " packagegroup-tmtx-ui weston-xwayland matchbox-terminal"
 
 LICENSE = "MIT"
 
@@ -17,6 +15,8 @@ TOOLCHAIN_HOST_TASK:remove:task-populate-sdk-ext = " nativesdk-intltool nativesd
 QB_MEM = '${@bb.utils.contains("DISTRO_FEATURES", "opengl", "-m 512", "-m 256", d)}'
 QB_MEM:qemuarmv5 = "-m 256"
 QB_MEM:qemumips = "-m 256"
+
+IMAGE_ROOTFS_EXTRA_SPACE = "4194304"
 
 ROOTFS_POSTPROCESS_COMMAND += " image_add_bootables;"
 
