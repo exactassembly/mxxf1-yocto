@@ -4,5 +4,8 @@ SUMMARY = "This package group adds the ThrustmasterTX GUI and dependencies to th
 inherit packagegroup
 
 RDEPENDS:${PN} = "\
+    procps \
+    ntp \
     tmtx-ui \
+    sudo \
 "
