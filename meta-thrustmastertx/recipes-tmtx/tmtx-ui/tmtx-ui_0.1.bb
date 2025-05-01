@@ -12,6 +12,7 @@ COMPATIBLE_MACHINE = "dr-imx6-mc"
 RDEPENDS:${PN} += "\
 	bash \
 "
+REQUIRED_DISTRO_FEATURES= " systemd"
 
 #	file://tmtx-ui-imx6_${PV}.tbz2 
 
@@ -27,10 +28,10 @@ SRC_URI += "\
 S = "${WORKDIR}/${PN}-imx6_${PV}"
 CFGDIR = "${D}/config"
 
-inherit bin_package
-#inherit systemd bin_package
-#SYSTEMD_AUTO_ENABLE = "enable"
-#SYSTEMD_SERVICE_${PN} = "start_dpgui.service"
+inherit systemd bin_package
+SYSTEMD_AUTO_ENABLE:${PN} = "enable"
+SYSTEMD_SERVICE:${PN} = "start_dpgui.service"
+SYSTEMD_PACKAGES += "${PN}"
 
 INSANE_SKIP:${PN} += "already-stripped 32bit-time file-rdeps ldflags"
 do_package_qa[noexec] = "1"
@@ -43,8 +44,8 @@ do_install:append () {
 	rm -R ${D}/config/gui/libs/libsigar-amd64-linux.so
 	install -d ${D}/etc/profile.d
 	install -m 0444 ${WORKDIR}/tmtx-env.sh ${D}/etc/profile.d
-	install -d ${D}/${systemd_unitdir}/system
-	install -m 0644 ${WORKDIR}/start_dpgui.service ${D}/${systemd_unitdir}/system
+	install -d ${D}${systemd_system_unitdir}
+	install -m 0644 ${WORKDIR}/start_dpgui.service ${D}${systemd_system_unitdir}
 }
 
 do_patch[noexec] = "1"
@@ -54,7 +55,7 @@ do_compile[noexec] = "1"
 ALLOW_EMPTY:${PN} = "1"
 
 FILES:${PN} = "\
-	/usr/lib/systemd/system/start_dpgui.service \
+	${systemd_system_unitdir}/start_dpgui.service \
 	/etc/profile.d/tmtx-env.sh \
 	/usr/local/* \
 	/config/* \
