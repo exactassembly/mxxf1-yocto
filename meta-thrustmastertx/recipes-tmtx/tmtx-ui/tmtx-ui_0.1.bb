@@ -15,7 +15,7 @@ RDEPENDS:${PN} += "\
 
 #	file://tmtx-ui-imx6_${PV}.tbz2 
 
-SRC_URI = "https://drive.google.com/file/d/1wbSo3K2RxEjzrUj3hQM4-QZyXPJcnCaF/view?usp=drive_link;downloadfilename=tmtx-ui-imx6_${PV}.tbz2"
+SRC_URI = "https://storage.googleapis.com/xa-tarballs-tmtx/tmtx-ui-imx6_0.1.tbz2"
 SRC_URI[sha256sum] = "4866e88f3c79de82f4fc0e9c6fd29fc3359e98d7f8e808402b29358132b4f45e"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
