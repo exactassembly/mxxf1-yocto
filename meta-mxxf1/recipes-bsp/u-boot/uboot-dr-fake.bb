@@ -1,0 +1,5 @@
+DESCRIPTION = "Fake u-boot on DataRespons board"
+LICENSE="MIT"
+PROVIDES += "virtual/bootloader"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+COMPATIBLE_MACHINE = "dr-imx6-mc"

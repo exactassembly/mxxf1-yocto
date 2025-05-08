@@ -44,11 +44,10 @@
         "mxxf1": {
             "target" : "tmtx-image",
             "local.conf": [
-                "DISTRO                         = 'dr-distro'   ",
+                "DISTRO                         = 'tmtx-dr-distro'   ",
                 "ACCEPT_FSL_EULA                = '2'           ",
                 "IMAGE_FEATURES                 += ' empty-root-password'",
                 "PACKAGE_CLASSES                = 'package_deb' ",
-                "VIRTUAL-RUNTIME_init_manager = 'systemd'       ",
 		"MACHINE                        = 'dr-imx6-mc'  "
 	        ]
         }

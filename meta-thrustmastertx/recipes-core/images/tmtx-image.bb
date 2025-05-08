@@ -6,6 +6,7 @@ inherit core-image
 
 IMAGE_FEATURES += "package-management splash ssh-server-dropbear hwcodecs weston"
 IMAGE_INSTALL += " packagegroup-tmtx-ui weston-xwayland matchbox-terminal mxxf1-dtb"
+CORE_IMAGE_EXTRA_INSTALL += "wayland weston"
 
 TOOLCHAIN_HOST_TASK:append = " nativesdk-intltool nativesdk-glib-2.0"
 TOOLCHAIN_HOST_TASK:remove:task-populate-sdk-ext = " nativesdk-intltool nativesdk-glib-2.0"
