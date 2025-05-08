@@ -5,7 +5,7 @@ LICENSE = "MIT"
 inherit core-image
 
 IMAGE_FEATURES += "package-management splash ssh-server-dropbear hwcodecs weston"
-IMAGE_INSTALL += " packagegroup-tmtx-ui weston-xwayland matchbox-terminal mxxf1-dtb"
+IMAGE_INSTALL += " packagegroup-tmtx-ui weston-xwayland matchbox-terminal"
 CORE_IMAGE_EXTRA_INSTALL += "wayland weston"
 
 TOOLCHAIN_HOST_TASK:append = " nativesdk-intltool nativesdk-glib-2.0"
