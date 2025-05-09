@@ -26,6 +26,7 @@ RDEPENDS:packagegroup-dr-net = "\
 	networkmanager-nmcli \
 	networkmanager-nmcli-bash-completion \
 	ethtool \
+	netdev-names \
 "
 
 RDEPENDS:packagegroup-dr-wifi = "\
