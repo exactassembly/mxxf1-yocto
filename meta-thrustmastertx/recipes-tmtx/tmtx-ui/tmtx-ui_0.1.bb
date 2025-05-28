@@ -12,7 +12,6 @@ COMPATIBLE_MACHINE = "dr-imx6-mc"
 RDEPENDS:${PN} += "\
 	bash \
 	xterm \
-	weston-init \
 "
 REQUIRED_DISTRO_FEATURES= " systemd"
 
@@ -53,6 +52,9 @@ do_install:append () {
 	install -d ${D}${systemd_system_unitdir}
 	install -m 0644 ${WORKDIR}/tmtx-ui-launch.service ${D}${systemd_system_unitdir}
 }
+
+#	ln -s /dev/null ${D}/etc/systemd/system/getty@tty1.service
+#/etc/systemd/system/getty.target.wants/getty@tty1.service 
 
 do_patch[noexec] = "1"
 do_configure[noexec] = "1"

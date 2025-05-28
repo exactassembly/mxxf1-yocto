@@ -1,2 +1,2 @@
-SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{iflink}=="6", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth0"
-SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{iflink}=="7", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth1"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{iflink}=="7", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth0"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{iflink}=="6", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth1"

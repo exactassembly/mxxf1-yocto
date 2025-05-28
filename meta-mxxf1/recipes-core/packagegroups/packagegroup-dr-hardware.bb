@@ -38,8 +38,6 @@ RDEPENDS:packagegroup-dr-wifi = "\
 "
 
 RDEPENDS:packagegroup-dr-screen = "\
-	weston \
-	weston-init \
 "
 
 RDEPENDS:packagegroup-dr-sound = "\

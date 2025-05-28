@@ -1,14 +1,14 @@
 [Unit]
 Description=Start ThrustmasterTX GUI
-After=weston.service
-Requires=weston.service
+After=xserver-nodm.service
+Requires=xserver-nodm.service
 
 [Service]
 Restart=on-failure
 Type=simple
 ExecStart=/opt/tmtx/tmtx-ui-launch.sh
 RestartSec=1
-User=weston
+User=root
 WorkingDirectory=/config/gui
 
 [Install]
