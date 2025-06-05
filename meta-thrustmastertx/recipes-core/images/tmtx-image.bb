@@ -6,11 +6,9 @@ inherit core-image
 
 IMAGE_FEATURES += "package-management splash ssh-server-dropbear hwcodecs x11 x11-base"
 IMAGE_INSTALL += " packagegroup-tmtx-ui"
-CORE_IMAGE_BASE_INSTALL += "matchbox-terminal"
 
 TOOLCHAIN_HOST_TASK:append = " nativesdk-intltool nativesdk-glib-2.0"
 TOOLCHAIN_HOST_TASK:remove:task-populate-sdk-ext = " nativesdk-intltool nativesdk-glib-2.0"
-
 
 # add 4GB = 4194304
 # add 1GB = 1048576

@@ -11,7 +11,7 @@ COMPATIBLE_MACHINE = "dr-imx6-mc"
 
 RDEPENDS:${PN} += "\
 	bash \
-	xterm \
+	python3 \
 "
 REQUIRED_DISTRO_FEATURES= " systemd"
 
